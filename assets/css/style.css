@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-image: url("../images/back-fundo.jpg");
+    background-image: url("./img/back-fundo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
