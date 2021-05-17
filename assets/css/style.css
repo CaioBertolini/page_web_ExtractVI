@@ -1,0 +1,174 @@
+body{
+    margin: 0;
+    background-image: url("/assets/images/back-fundo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-top{
+    display: flex;
+    position: fixed;
+    background-color: green;
+    width: 98.5%;
+    align-items: center;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.header-top a{
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.body-page{
+    display: flex;
+    flex-direction: column;
+}
+
+.body-page > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 110vh;
+}
+
+.div-home h1{
+    font-size: 2.5em;
+    color: black;
+    width: 90%;
+    text-align: center;
+}
+
+.div-home a{
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5em;
+    background-color: green;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+.div-software span, .div-sobre span, .div-download span, .div-contato span {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.div-software p, .div-sobre p{
+    font-size: 1.5em;
+    width: 90%;
+    text-align: justify;
+}
+
+.div-sobre, .div-download, .div-contato{
+    color: white;
+    /* -webkit-text-stroke: 0.7px black; */
+}
+
+.div-download form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: black;
+    border-radius: 10px;
+}
+
+.div-download > form > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.5em;
+    margin-bottom: 25px;
+}
+
+.div-download > form > button{
+    background-color: green;
+    width: 30%;
+    height: 60px;
+    color: white;
+    font-size: 1.3em;
+    border: 0;
+    cursor: pointer;
+}
+
+.div-download > form > div > input, .div-download > form > div > select{
+    width: 100%;
+    padding: 5px;
+    border: 0;
+    font-size: 0.8em;
+    border-radius: 7px;
+}
+
+.div-download > form > div > label{
+    display: flex;
+    align-items: center;
+}
+
+.div-contato > form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 100px;
+}
+
+.div-contato div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.div-contato input{
+    width: 100%;
+    height: 30px;
+    margin: 0 20px;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.div-contato textarea{
+    border: 0;
+    border: 20px;
+    padding: 10px;
+    resize: none;
+}
+
+.div-contato button{
+    margin-top: 20px;
+    height: 30px;
+    width: 150px;
+    border: 0;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: 1.2em;
+    margin-left: 85%;
+}
+
+#email-cont{
+    margin-right: 0;
+}
+
+#logos{
+    flex-direction: row;
+    height: 20%;
+    margin: 0;
+}
+
+#logos img{
+    height: 150px;
+    padding: 20px;
+}
