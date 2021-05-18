@@ -51,12 +51,13 @@ body{
 .div-home a{
     text-decoration: none;
     text-align: center;
-    padding: 20px;
+    padding: 20px 30px;
     font-size: 1.5em;
     background-color: green;
     color: white;
     border: 0;
     cursor: pointer;
+    border-radius: 40px;
 }
 
 .div-software span, .div-sobre span, .div-download span, .div-contato span {
@@ -68,13 +69,12 @@ body{
 
 .div-software p, .div-sobre p{
     font-size: 1.5em;
-    width: 90%;
+    width: 80%;
     text-align: justify;
 }
 
 .div-sobre, .div-download, .div-contato{
     color: white;
-    /* -webkit-text-stroke: 0.7px black; */
 }
 
 .div-download form{
@@ -106,6 +106,7 @@ body{
     font-size: 1.3em;
     border: 0;
     cursor: pointer;
+    border-radius: 40px;
 }
 
 .div-download > form > div > input, .div-download > form > div > select{
@@ -150,6 +151,7 @@ body{
     border: 20px;
     padding: 10px;
     resize: none;
+    font-family: RubikRegular;
 }
 
 .div-contato button{
@@ -158,10 +160,23 @@ body{
     width: 150px;
     border: 0;
     cursor: pointer;
-    background-color: black;
+    background-color: rgb(6, 211, 6);
     color: white;
     font-size: 1.2em;
     margin-left: 85%;
+    border-radius: 40px;
+}
+
+#labs-col{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    color: black;
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    margin: 0;
 }
 
 #email-cont{
