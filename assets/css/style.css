@@ -77,6 +77,10 @@ body{
     color: white;
 }
 
+.div-sobre a{
+    color: white;
+}
+
 .div-download form{
     display: flex;
     flex-direction: column;
