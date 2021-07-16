@@ -74,6 +74,14 @@ body{
     text-align: justify;
 }
 
+#indi-iv{
+    font-size: 2em;
+    margin-top: 50px; 
+    padding: 10px;
+    border: 3px dashed green;
+    border-radius: 10px;
+}
+
 #div-index{
     height: auto;
 }
