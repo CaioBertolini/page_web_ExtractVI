@@ -6,6 +6,8 @@
         <title>
             ExtractVI
         </title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
     <body>
         <div class="header-top">
@@ -13,6 +15,7 @@
             <a href="#div-software">Software</a>
             <a href="#div-sobre">Sobre</a>
             <a href="#div-download">Download</a>
+            <a>Manual</a>
             <a href="#div-contato">Contato</a>
         </div>
         <div class="body-page">
@@ -24,11 +27,141 @@
             <div class="div-software" id="div-software">
                 <span>Software</span>
                 <p> O ExtractVI é um software off-line capaz de extrair os índices de vegetação (IV) de imagens com uma ou mais folhas da cultura que você desejar. Ele é capaz de calcular mais de 20 índices de vegetação distintos, utilizando somente as cores do vermelho, verde e azul (RGB).</p>
-                <p> Ao adicionar as imagens no ExtractVI, será realizado o reconhecimento da folha e posteriormente a extração das cores do vermelho, verde e azul. Depois de extraído essas cores é calculado os índices de vegetação, que depois será salvo em uma tabela, no qual pode ser manipulado esses dados para o seu objetivo de interesse.</p>
+                <p> Ao adicionar as imagens no ExtractVI, será realizado o reconhecimento da folha e, posteriormente, a extração das cores do vermelho, verde e azul. Após a extração dessas cores é calculado os índices de vegetação, que depois será salvo em uma tabela, no qual pode ser manipulado esses dados para o seu objetivo de interesse.</p>
+                <span style="font-size: 2em; margin-top: 50px; padding: 10px; border: 3px dashed green; border-radius: 10px;">Veja o IV's extraídos abaixo ⬇️</span>
+            </div>
+            <div class="div-index" id="div-index">
+                <span>Índices de vegetação</span>
+                <table>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Sigla</th>
+                        <th>Fórmula</th>
+                    </tr>
+                    <tr>
+                        <td>Vermelho normalizado</td>
+                        <td>Rn</td>
+                        <td>$$\frac{R}{R+G+B}$$</td>
+                    </tr>
+                    <tr>
+                        <td>Verde normalizado</td>
+                        <td>Gn</td>
+                        <td>$$\frac{G}{R+G+B}$$</td>
+                    </tr>
+                    <tr>
+                        <td>Azul normalizado</td>
+                        <td>Bn</td>
+                        <td>$$\frac{R}{R+G+B}$$</td>
+                    </tr>
+                    <tr>
+                        <td>Matiz</td>
+                        <td>H</td>
+                        <td>
+                            $$\text{60} \times \text{[(G-B)/(max(RGB)-min(RGB))]/2, se max(RGB)=R}$$
+                            $$\text{60} \times \text{{2+[(B-R)/(max(RGB)-min(RGB))]}/2, se max(RGB)=G}$$
+                            $$\text{60} \times \text{{4+[(R-G)/(max(RGB)-min(RGB))]}/2, se max(RGB)=B}$$
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Saturação</td>
+                        <td>S</td>
+                        <td>
+                            $$\frac{max(RGB)-min(RGB)}{max(RGB)}\text{, se max(RGB)}\neq0$$
+                            $$\text{0, se max(RGB)=0}$$
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Brilho</td>
+                        <td>V</td>
+                        <td>
+                            $$max(RGB)$$
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Relação Verde e Azul</td>
+                        <td>G/B</td>
+                        <td>$$\frac{Gn}{Bn}$$</td>
+                    </tr>
+                    <tr>
+                        <td>Relação Verde e Vermelho</td>
+                        <td>G/R</td>
+                        <td>$$\frac{Gn}{Rn}$$</td>
+                    </tr>
+                    <tr>
+                        <td>Relação Vermelho e Azul</td>
+                        <td>G/B</td>
+                        <td>$$\frac{Rn}{Bn}$$</td>
+                    </tr>
+                    <tr>
+                        <td>Normalized Red Blue Difference Index</td>
+                        <td>Rrb</td>
+                        <td>$$\frac{Rn-Bn}{Rn+Bn}$$</td>
+                    </tr>
+                    <tr>
+                        <td>Normalized Green Red Difference Index</td>
+                        <td>Ggr</td>
+                        <td>$$\frac{Gn-Rn}{Gn+Rn}$$</td>
+                    </tr>
+                    <tr>
+                        <td>Normalized Green Blue Difference Index</td>
+                        <td>Ggb</td>
+                        <td>$$\frac{Gn-Bn}{Gn+Bn}$$</td>
+                    </tr>
+                    <tr>
+                        <td>Excess Green Index</td>
+                        <td>ExG</td>
+                        <td>$$2 \times Gn-Rn-Bn$$</td>
+                    </tr>
+                    <tr>
+                        <td>Excess Red Vegetative Index</td>
+                        <td>ExR</td>
+                        <td>$$1,4 \times Rn-Gn$$</td>
+                    </tr>
+                    <tr>
+                        <td>Excess green minus Excess red</td>
+                        <td>ExGR</td>
+                        <td>$$ExG-ExR$$</td>
+                    </tr>
+                    <tr>
+                        <td>Ground Level Image Analysis</td>
+                        <td>GLI</td>
+                        <td>$$\frac{2 \times Gn-Rn-Bn}{2 \times Gn+Rn+Bn}$$</td>
+                    </tr>
+                    <tr>
+                        <td>Visible Atmospherically Resistant Index</td>
+                        <td>VARI</td>
+                        <td>$$\frac{Gn-Rn}{Gn+Rn-Bn}$$</td>
+                    </tr>
+                    <tr>
+                        <td>Vegetative</td>
+                        <td>VEG</td>
+                        <td>$$\frac{Gn}{Rn^{0,667} \times Bn^{1-0,667}}$$</td>
+                    </tr>
+                    <tr>
+                        <td>Color Index of Vegetation Extraction</td>
+                        <td>CIVE</td>
+                        <td>$$0,441 \times Rn-0,811 \times Gn+0,385 \times Bn+18,78745$$</td>
+                    </tr>
+                    <tr>
+                        <td>Triangular</td>
+                        <td>TGI</td>
+                        <td>$$-0,5 \times [(700-435,8) \times (Rn-Gn)-(700-546) \times (Rn-Gn)]$$</td>
+                    </tr>
+                    <tr>
+                        <td>Triangular</td>
+                        <td>TGI</td>
+                        <td>$$-0,5 \times [(700-435,8) \times (Rn-Gn)-(700-546) \times (Rn-Gn)]$$</td>
+                    </tr>
+                    <tr>
+                        <td>Combination</td>
+                        <td>COM</td>
+                        <td>$$0,36 \times ExG+0,47 \times CIVE+0,17 \times VEG$$</td>
+                    </tr>
+                </table>
             </div>
             <div class="div-sobre" id="div-sobre">
                 <span>Sobre</span>
-                <p> Esse software foi desenvolvido na Faculdade de Zootecnia e Engenharia de Alimento (FZEA) da Universidade de São Paulo (USP), localizado em Pirassununga-SP, com a colaboração de 3 laboratórios: GEFEP (Grupo de Estudos em Forragicultura e Pastagens), LTSI (Laboratório de Tecnologia e Sistemas de Informação) e MAPAG (Mapeamento de Ambientes, Pastagens e Grandes cultivos).</p>
+                <p> Esse software foi desenvolvido na Faculdade de Zootecnia e Engenharia de Alimentos (FZEA) da Universidade de São Paulo (USP), localizado em Pirassununga-SP, com a colaboração de 3 laboratórios: GEFEP (Grupo de Estudos em Forragicultura e Pastagens), LTSI (Laboratório de Tecnologia e Sistemas de Informação) e MAPAG (Mapeamento de Ambientes, Pastagens e Grandes cultivos).</p>
                 <p> Os autores responsáveis pelo desenvolvimento do Extract IV são: o aluno de pós-graduação <a href="https://www.linkedin.com/in/caio-augusto-bertolini/" target="_blank"> Caio Augusto Bertolini </a>, a professora doutora <a href="http://www.fzea.usp.br/?page_id=3206" target="_blank">Lilian Elgalise Techio Pereira</a> e o professor doutor <a href="http://www.fzea.usp.br/?page_id=3072" target="_blank">Adriano Rogério Bruno Tech</a>.</p>
             </div>
             <div class="div-download" id="div-download">
@@ -71,7 +204,7 @@
                 </form>
             </div>
             <div id="labs-col">
-                <span>Laboratórios colaboradores:</span>
+                <span>Grupos de pesquisa colaboradores:</span>
                 <div id="logos">
                     <img src="./assets/images/GEFEP-Logo.jpg" alt="Logo GEFEP">
                     <img src="./assets/images/LTSI-logo.jpeg" alt="Logo TSI">

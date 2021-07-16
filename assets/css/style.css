@@ -19,6 +19,7 @@ body{
     align-items: center;
     padding: 10px;
     font-size: 1.2em;
+    z-index: 1;
 }
 
 .header-top a{
@@ -60,7 +61,7 @@ body{
     border-radius: 40px;
 }
 
-.div-software span, .div-sobre span, .div-download span, .div-contato span {
+.div-software span, .div-sobre span, .div-download span, .div-contato span , .div-index span{
     font-size: 3em;
     font-weight: bold;
     text-align: center;
@@ -71,6 +72,29 @@ body{
     font-size: 1.5em;
     width: 80%;
     text-align: justify;
+}
+
+#div-index{
+    height: auto;
+}
+
+.div-index table{
+    background-color: white;
+    margin: 20px;
+    padding-top: 20px;
+    width: 80%;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    border-collapse: collapse;
+}
+
+.div-index th{
+    padding: 15px 0px;
+}
+
+.div-index td{
+    border-top: 2px solid black;
 }
 
 .div-sobre, .div-download, .div-contato{
